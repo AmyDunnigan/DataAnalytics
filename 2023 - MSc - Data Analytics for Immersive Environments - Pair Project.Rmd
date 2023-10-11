@@ -3,6 +3,8 @@ title: "Data Analytics for Immersive Environments - Pair Project"
 author: "Niall McGuinness"
 date: "`r format(Sys.Date(), '%B %d %Y')`"
 output:
+  word_document:
+    toc: TRUE
   html_document:
     toc: TRUE
     number_sections: FALSE
@@ -11,8 +13,6 @@ output:
     code_folding: hide
     theme: cerulean
   pdf_document:
-    toc: TRUE
-  word_document:
     toc: TRUE
 subtitle: 'Virtual Reality(VR) Interventions: Evaluating Efficacy in the Treatment of Generalized Anxiety Disorder(GAD)'
 ---
@@ -42,7 +42,7 @@ Triggers for anxiety disorders can range from environmental factors, genetics, b
 
 Virtual Reality has emerged as a transformative tool in the treatment of anxiety disorders, offering immersive therapeutic experiences that can simulate real-world scenarios in a controlled environment. By exposing patients to stimuli or situations that trigger anxiety, VR allows for gradual habituation and desensitization, making it a potent complement to traditional cognitive-behavioral therapies. For instance, Opris et al. (2012) demonstrated that VR exposure therapy (VRET) significantly reduced post-traumatic stress disorder symptoms in military personnel. Similarly, a study by Maples-Keller et al. (2017) found that VRET can be as effective as in vivo exposure for the treatment of acrophobia. Furthermore, Lindner et al. (2017) showcased the potential of using VR in treating social anxiety disorders, particularly in enhancing public speaking skills. The continued integration of VR into therapeutic practices showcases its potential to revolutionize the treatment landscape for anxiety disorders.
 
-```{r Jungian1, fig.align = 'center', out.width = '75%', fig.cap = 'Fig 1.0 Three types of exposure-based methods(1)'}
+```{r Exposure1, fig.align = 'center', out.width = '75%', fig.cap = 'Fig 1.0 Three types of exposure-based methods(1)'}
 knitr::include_graphics(here::here("images", "vr_exposure.png"))
 ```
 ```
@@ -66,7 +66,7 @@ The study consisted of 60 patients (M=32, F=28) in total, divided into the group
 
 All patients were adults in the age range of 18 - 40 years. Information on the exact age of participants was not recorded. Gender information was recorded. All groups were of equal size. The two groups underwent 12 weeks of treatment for 50 minutes per week with a therapist. During that time the patients either underwent traditional CBT or used the VR app. GAD measurements for all groups were measured using the two self-report mechanisms outlined above. Measurements were taken at the start and end of the study.
 
-### Statistical Analysis Requirements
+## Requirements
 
 The data gathered will be made available to each student group via Moodle. Each group will receive a different subset of the results the study participants. As part of this assignment, you are required to perform statistical analysis on these data. This will involve the completion of the following steps:
 
@@ -77,9 +77,9 @@ The data gathered will be made available to each student group via Moodle. Each 
 5.  Analyse the data to provide the hypothesis testing conclusion.
 6.  Determine the 95% confidence interval for the population mean of a **single** group.
 
-### Lab Report Requirements
+### Lab Report Structure
 
-These steps will result in the generation of a single R Notebook file containing the R source code. This R Notebook file must be configured to generate a PDF report **(1200 words excluding plots or tables with a maximum of 5 plots/tables allowed)**. The R Notebook **must** have the following structure:
+These steps will result in the generation of a single R Notebook file containing the R source code. This R Notebook file must be configured to generate a HTML document **(1200 words excluding plots or tables with a maximum of 5 plots/tables allowed)**. The R Notebook **must** have the following structure:
 
 1.  Title (including participant full names)
 2.  Table of Contents
@@ -114,7 +114,7 @@ These steps will result in the generation of a single R Notebook file containing
 
 ### Structure, Presentation & Quality
 
-Your R Notebook source code should output both the code and any data/plot/table to the rendered document (e.g. HTML, PDF, Word).
+Your R Notebook source code should output **both the code and any data/plot/table** to the rendered HTML document.
 
 A total of **2.5 marks** will be awarded for the clear commenting of any (non-trivial) line of R code and a clear description of any novel processing and/or user-defined functions.
 
