@@ -5,6 +5,8 @@ date: "`r format(Sys.Date(), '%B %d %Y')`"
 output:
   word_document:
     toc: TRUE
+  pdf_document:
+    toc: TRUE
   html_document:
     toc: TRUE
     number_sections: FALSE
@@ -12,8 +14,6 @@ output:
     df_print: paged
     code_folding: hide
     theme: cerulean
-  pdf_document:
-    toc: TRUE
 subtitle: 'Virtual Reality(VR) Interventions: Evaluating Efficacy in the Treatment of Generalized Anxiety Disorder(GAD)'
 ---
 
@@ -42,10 +42,10 @@ Triggers for anxiety disorders can range from environmental factors, genetics, b
 
 Virtual Reality has emerged as a transformative tool in the treatment of anxiety disorders, offering immersive therapeutic experiences that can simulate real-world scenarios in a controlled environment. By exposing patients to stimuli or situations that trigger anxiety, VR allows for gradual habituation and desensitization, making it a potent complement to traditional cognitive-behavioral therapies. For instance, Opris et al. (2012) demonstrated that VR exposure therapy (VRET) significantly reduced post-traumatic stress disorder symptoms in military personnel. Similarly, a study by Maples-Keller et al. (2017) found that VRET can be as effective as in vivo exposure for the treatment of acrophobia. Furthermore, Lindner et al. (2017) showcased the potential of using VR in treating social anxiety disorders, particularly in enhancing public speaking skills. The continued integration of VR into therapeutic practices showcases its potential to revolutionize the treatment landscape for anxiety disorders.
 
-```{r Exposure1, fig.align = 'center', out.width = '75%', fig.cap = 'Fig 1.0 Three types of exposure-based methods(1)'}
+```{r Exposure1, fig.align = 'center', out.width = '75%', fig.cap = 'Three types of exposure-based methods(1)'}
 knitr::include_graphics(here::here("images", "vr_exposure.png"))
 ```
-```
+
 
 Non-pharmacological therapies for Generalised Anxiety Disorder are normally described under the umbrella term of Cognitive Behavioural Therapy (CBT). The most common approaches are:
 
@@ -59,10 +59,10 @@ There are several methods employed to assess GAD severity including structured i
 
 Data from a study are presented that investigated the effect of VR exposure therapy, conducted in a virtual reality environment, on psychotherapy patients undergoing treatment for GAD.
 
-The study consisted of 60 patients (M=32, F=28) in total, divided into the groups listed below, using random sampling.
+The study consisted of 180 patients (M=96, F=84) in total, divided into the groups listed below. The participants were randomly sampled from the clinic client list and randomly assigned to one of two groups below:
 
--   Control (traditional CBT, no VR) (M=16, F=14)
--   Experimental (VR-based therapy) (M=16, F=14)
+-   Control (traditional CBT, no VR) (M=48, F=42)
+-   Experimental (VR-based therapy) (M=48, F=42)
 
 All patients were adults in the age range of 18 - 40 years. Information on the exact age of participants was not recorded. Gender information was recorded. All groups were of equal size. The two groups underwent 12 weeks of treatment for 50 minutes per week with a therapist. During that time the patients either underwent traditional CBT or used the VR app. GAD measurements for all groups were measured using the two self-report mechanisms outlined above. Measurements were taken at the start and end of the study.
 
@@ -79,7 +79,9 @@ The data gathered will be made available to each student group via Moodle. Each 
 
 ### Lab Report Structure
 
-These steps will result in the generation of a single R Notebook file containing the R source code. This R Notebook file must be configured to generate a HTML document **(1200 words excluding plots or tables with a maximum of 5 plots/tables allowed)**. The R Notebook **must** have the following structure:
+These steps will result in the generation of a single R Notebook file containing the R source code. This R Notebook file must be configured to generate a HTML document **(1200 words excluding plots or tables with a maximum of 5 plots/tables allowed)**.
+
+The R Notebook **must** have the following structure:
 
 1.  Title (including participant full names)
 2.  Table of Contents
@@ -88,7 +90,6 @@ These steps will result in the generation of a single R Notebook file containing
     -   Participants and setting
     -   Experiment design
     -   Results gathering
-    -   Major findings
     -   Findings/implications
 4.  Introduction **(15 marks)**
     -   Topic and context
@@ -120,7 +121,9 @@ A total of **2.5 marks** will be awarded for the clear commenting of any (non-tr
 
 Next, **2.5 marks** will be awarded if all included graphs/tables are formatted to maximise readability (i.e. main heading, labs, tick spacing and frequency, plot character, and caption).
 
-Finally, you will be awarded a maximum of **5 marks** based on the clarity, coherence, and quality of your written expression. This corresponds to a report that is clear in its expression, logical in its presentation of the steps followed, and free from grammatical and typographic errors.
+You will be awarded a maximum of **5 marks** based on the clarity, coherence, and quality of your written expression. This corresponds to a report that is clear in its expression, logical in its presentation of the steps followed, and free from grammatical and typographic errors.
+
+**Only a single R Notebook file should be submitted. Submission of multiple R Notebook files will result in the grading of only the first (alphabetically listed) R Notebook file.**
 
 ### Version Control Requirements
 
@@ -128,11 +131,11 @@ You must use a recognised online code repository (e.g., GitHub) and make regular
 
 Your grade for this component will depend directly upon the **regularity** of your commits. A development project of this size should consist of a minimum of **5+ distinct commit messages** spread over the lifetime of the development. Committing all your code in one commit, before the deadline, will be interpreted negatively.
 
-[**Any submission made which does not include a repository link will not be graded.**]{style="color: red;"}
+**Any submission made which does not include a repository link will not be graded.**
 
 ### Submission Requirements
 
-1.  A single **ZIP file** containing your report in **PDF** format and a **README** file containing a link to your R source code repository. Ensure that **no** changes are made to the repository following the submission deadline. You should create a separate fork for this submission and leave it unchanged after the deadline. Ask your lecturer for details on fork creation.
+1.  A **README** file containing a link to your R source code repository. Ensure that **no** changes are made to the repository following the submission deadline. You should create a separate fork for this submission and leave it unchanged after the deadline. Ask your lecturer for details on fork creation.
 2.  The assignment must be entirely the work of each student group. Students are **not** permitted to share any pseudocode or source code from their solution with any other group in the class.
 3.  Students may **not** distribute the source code of their solution to any other student, in any format (i.e., electronic, verbal, or hardcopy transmission).
 4.  Plagiarised assignments will receive a mark of **zero**. This also applies to the individual/group allowing their work to be plagiarised. Any plagiarism will be reported to the Head of Department and a report will be added to your permanent academic record.
@@ -142,8 +145,9 @@ Your grade for this component will depend directly upon the **regularity** of yo
 8.  Failure to attend the **interview** will result in a 0% grade. Both students in a group will be required to answer **several questions** on your submission to demonstrate understanding of the submitted project. Your **individual grade** for this component will be contingent on your **knowledge** of the work you submit.
 
 ## References
-1. Baus, Oliver & Bouchard, Stéphane. (2014). Moving from Virtual Reality Exposure-Based Therapy to Augmented Reality Exposure-Based Therapy: A Review. Frontiers in human neuroscience. 8. 112. 10.3389/fnhum.2014.00112.  (Accessed: 3 October 2023)
-2. [Anxiety disorders (no date) World Health Organization]( https://www.who.int/news-room/fact-sheets/detail/anxiety-disorders#:~:text=Anxiety%20disorders%20are%20the%20world’s,effective%20treatments%20for%20anxiety%20disorders) (Accessed: 4 October 2023) 
+
+1.  Baus, Oliver & Bouchard, Stéphane. (2014). Moving from Virtual Reality Exposure-Based Therapy to Augmented Reality Exposure-Based Therapy: A Review. Frontiers in human neuroscience. 8. 112. 10.3389/fnhum.2014.00112. (Accessed: 3 October 2023)
+2.  [Anxiety disorders (no date) World Health Organization](https://www.who.int/news-room/fact-sheets/detail/anxiety-disorders#:~:text=Anxiety%20disorders%20are%20the%20world’s,effective%20treatments%20for%20anxiety%20disorders) (Accessed: 4 October 2023)
 3.  Opris, D., Pintea, S., García-Palacios, A., Botella, C., Szamosközi, Ş., & David, D. (2012). [Virtual reality exposure therapy in anxiety disorders: a quantitative meta-analysis](https://www.journalwebsite.com/opris2012). *Depression and Anxiety, 29*(2), 85-93. (Accessed: 4 October 2023)
 4.  Maples-Keller, J. L., Bunnell, B. E., Kim, S. J., & Rothbaum, B. O. (2017). [The Use of Virtual Reality Technology in the Treatment of Anxiety and Other Psychiatry Disorders](https://www.journalwebsite.com/maples-keller2017). *Harvard Review of Psychiatry, 25*(3), 103-113. (Accessed: 4 October 2023)
 5.  Lindner, P., Miloff, A., Hamilton, W., Reuterskiöld, L., Andersson, G., Powers, M. B., & Carlbring, P. (2017). [Creating state of the art, next-generation Virtual Reality exposure therapies for anxiety disorders using consumer hardware platforms: design considerations and future directions](https://www.journalwebsite.com/lindner2017). *Cognitive Behaviour Therapy, 46*(5), 404-420. (Accessed: 5 October 2023)
